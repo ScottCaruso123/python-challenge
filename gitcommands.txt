@@ -1,0 +1,14 @@
+  344  git status
+  347  git log
+
+Commit process commands
+  348  git add PyBank/main.py 
+  349  git add .
+  353  git commit -m "adds hw folders and main.py"
+
+Checking status
+  354  git status
+  355  git log
+ 
+Pushing command
+ 356  git push
