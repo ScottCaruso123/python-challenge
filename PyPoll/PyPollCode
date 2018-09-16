@@ -1,0 +1,28 @@
+
+#Import pd as pandas
+import pandas as pd
+#assign df as the pathfile 
+df = pd.read_csv('/Users/scottcaruso/Resources/election_data.csv')
+#creates a list of the candidates name and their total vote count
+votes = df.Candidate.value_counts()
+#find the length of the list(how many people voted )
+t_votes = len(df)
+#Finds me the percentage 
+perc = (votes/t_votes) * 100
+          
+
+#################################################################
+#printing results
+#setting max_votes to the total number of votes 
+max_votes = votes.max()
+print('Election Results')
+print('---------------------')
+print('Total Votes: ' + str(t_votes))
+print('---------------------')
+for name in votes.index:
+    print('{}: {:.3}% ({})'.format(name, perc.loc[name], votes.loc[name]))
+    if votes.loc[name]==max_votes:
+        winner = name
+print('---------------------')
+print('Winner: ' + winner)
+print('---------------------')
